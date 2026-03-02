@@ -1,0 +1,205 @@
+# ============================================
+# Global .gitignore for PDF Translation System
+# ============================================
+
+# --------------------------------------------
+# Python
+# --------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyCharm / JetBrains
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Local environment files
+.env.local
+.env.*.local
+
+# --------------------------------------------
+# Node.js / JavaScript
+# --------------------------------------------
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+dist-ssr/
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript
+*.tsbuildinfo
+
+# --------------------------------------------
+# Docker
+# --------------------------------------------
+# Docker volumes
+docker-volumes/
+
+# --------------------------------------------
+# Application Specific
+# --------------------------------------------
+# Uploaded files (should not be committed)
+uploads/
+temp_uploads/
+
+# Generated output files
+outputs/
+translated/
+output/
+
+# PDF files (except example/test files)
+*.pdf
+!examples/*.pdf
+!test/*.pdf
+
+# Image assets (if generated)
+*.png
+*.jpg
+*.jpeg
+!frontend/public/**/*.png
+!frontend/public/**/*.jpg
+!frontend/public/**/*.jpeg
+!frontend/public/**/*.svg
+
+# --------------------------------------------
+# OS Generated Files
+# --------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# --------------------------------------------
+# Temporary Files
+# --------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# --------------------------------------------
+# Secrets (Ensure these are never committed)
+# --------------------------------------------
+# API Keys
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Service account credentials
+service-account.json
+credentials.json
+
+# Keep example env files
+!.env.example
