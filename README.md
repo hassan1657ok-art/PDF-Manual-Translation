@@ -284,7 +284,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built with ❤️ using [FastAPI](https://fastapi.tiangolo.com/) and [React](https://reactjs.org/)
 - PDF processing powered by [PyMuPDF](https://pymupdf.readthedocs.io/) and [ReportLab](https://www.reportlab.com/)
-- Translation powered by [Google Gemini AI](https://deepmind.google/technologies/gemini/)
+- Translation powered by [Open AI API]
 
 ---
 
