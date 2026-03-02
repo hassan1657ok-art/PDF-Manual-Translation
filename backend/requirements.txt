@@ -1,0 +1,14 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+PyMuPDF==1.24.3
+langchain==0.2.1
+langchain-openai==0.1.8
+langgraph==0.1.1
+pydantic==2.7.1
+reportlab==4.1.0
+python-multipart
+websockets
+python-dotenv
+httpx
+pytesseract
+Pillow

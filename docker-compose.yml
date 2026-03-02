@@ -1,0 +1,48 @@
+# docker-compose.yml — Run the full stack locally with one command:
+#   docker compose up --build
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: docupreserve-backend
+    ports:
+      - "8000:8000"
+    environment:
+      # Load secrets from .env file (never commit real keys to git).
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # Tell the backend which frontend URL to whitelist for CORS.
+      - FRONTEND_URL=http://localhost:8080
+      - PORT=8000
+    volumes:
+      # Persist uploads and outputs across container restarts.
+      - backend-uploads:/app/uploads
+      - backend-outputs:/app/outputs
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" ]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # Point the React app at the backend during build.
+        VITE_API_URL: http://localhost:8000
+    container_name: docupreserve-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  backend-uploads:
+  backend-outputs:

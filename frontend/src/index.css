@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-slate-900 text-slate-100;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-800;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded-full;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-slate-800/60 backdrop-blur-md border border-slate-700/50 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-500 
+           text-white font-semibold px-6 py-3 rounded-xl 
+           transition-all duration-200 
+           shadow-lg shadow-indigo-900/40 
+           disabled:opacity-40 disabled:cursor-not-allowed
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-700 hover:bg-slate-600 
+           text-slate-200 font-medium px-5 py-2.5 rounded-xl 
+           transition-all duration-200 
+           border border-slate-600/50
+           active:scale-95;
+  }
+
+  .label-sm {
+    @apply text-xs font-semibold uppercase tracking-widest text-slate-400;
+  }
+
+  /* Node states */
+  .node-idle {
+    @apply border-slate-600 bg-slate-800/40 text-slate-500;
+  }
+  .node-active {
+    @apply border-indigo-500 bg-indigo-950/60 text-indigo-300 
+           shadow-lg shadow-indigo-900/40 animate-pulse;
+  }
+  .node-done {
+    @apply border-emerald-500 bg-emerald-950/50 text-emerald-400;
+  }
+}
